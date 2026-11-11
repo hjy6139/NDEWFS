@@ -1,0 +1,140 @@
+{
+  "name": "Chengchuan",
+  "usage": "60/30/10: surface 60, primary 30, accent 10. Tokens only, no raw hex in code.",
+  "brand": "#3A4650",
+  "accent": "#E4572E",
+  "scale": {
+    "50": "#F7F7F8",
+    "100": "#ECEDEE",
+    "200": "#D9DBDD",
+    "300": "#BDC2C7",
+    "400": "#9FA9B2",
+    "500": "#7C8E9D",
+    "600": "#5E7282",
+    "700": "#475561",
+    "800": "#3A4650",
+    "900": "#1F2428",
+    "950": "#121517"
+  },
+  "semantic": {
+    "light": {
+      "surface": "#F7F7F8",
+      "surface-raised": "#FBFBFC",
+      "surface-overlay": "#ECECEE",
+      "border": "#DDDEDF",
+      "border-strong": "#B6B8BA",
+      "text-primary": "#1F2428",
+      "text-secondary": "#475561",
+      "text-muted": "#717477",
+      "primary": "#3A4650",
+      "on-primary": "#FFFFFF",
+      "primary-container": "#ECEDEE",
+      "on-primary-container": "#1F2428",
+      "accent": "#E4572E",
+      "on-accent": "#111111",
+      "accent-container": "#F5E4E0",
+      "on-accent-container": "#B34A2C",
+      "success": "#2F7D4F",
+      "warning": "#B9791F",
+      "danger": "#C03A2B"
+    },
+    "dark": {
+      "surface": "#1F2428",
+      "surface-raised": "#3A4650",
+      "surface-overlay": "#23292E",
+      "border": "#53575A",
+      "border-strong": "#7A7D7F",
+      "text-primary": "#F7F7F8",
+      "text-secondary": "#D9DBDD",
+      "text-muted": "#96989A",
+      "primary": "#BDC2C7",
+      "on-primary": "#111111",
+      "primary-container": "#3A4650",
+      "on-primary-container": "#ECEDEE",
+      "accent": "#EC8A6D",
+      "on-accent": "#111111",
+      "accent-container": "#483836",
+      "on-accent-container": "#F7F7F8",
+      "success": "#7CC48A",
+      "warning": "#E0B06A",
+      "danger": "#E57A6E"
+    }
+  },
+  "contrast": {
+    "checks": [
+      {
+        "mode": "light",
+        "check": "text-secondary vs surface",
+        "a": "#475561",
+        "b": "#F7F7F8",
+        "ratio": 7.16,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "mode": "light",
+        "check": "on-primary vs primary",
+        "a": "#FFFFFF",
+        "b": "#3A4650",
+        "ratio": 9.67,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "mode": "light",
+        "check": "on-accent vs accent",
+        "a": "#111111",
+        "b": "#E4572E",
+        "ratio": 5.13,
+        "min": 3.0,
+        "pass": true
+      },
+      {
+        "mode": "light",
+        "check": "text-muted vs surface",
+        "a": "#717477",
+        "b": "#F7F7F8",
+        "ratio": 4.39,
+        "min": 3.0,
+        "pass": true
+      },
+      {
+        "mode": "dark",
+        "check": "text-secondary vs surface",
+        "a": "#D9DBDD",
+        "b": "#1F2428",
+        "ratio": 11.28,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "mode": "dark",
+        "check": "on-primary vs primary",
+        "a": "#111111",
+        "b": "#BDC2C7",
+        "ratio": 10.53,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "mode": "dark",
+        "check": "on-accent vs accent",
+        "a": "#111111",
+        "b": "#EC8A6D",
+        "ratio": 7.57,
+        "min": 3.0,
+        "pass": true
+      },
+      {
+        "mode": "dark",
+        "check": "text-muted vs surface",
+        "a": "#96989A",
+        "b": "#1F2428",
+        "ratio": 5.41,
+        "min": 3.0,
+        "pass": true
+      }
+    ],
+    "all_pass": true
+  }
+}

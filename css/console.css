@@ -1,0 +1,62 @@
+/* 地图、表单栅格和等级色块。后台皮肤在 admin.css。 */
+
+#entry .fields,
+#rulebook .fields,
+.creator .fields { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3) var(--s-4); }
+#rulebook .rule-groups { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5) var(--s-6); }
+.help, .scenario-note, .error-text { margin: var(--s-2) 0 0; color: var(--muted); font-size: var(--t-small); line-height: 1.5; }
+.error-text { color: var(--error, #9e2a22); }
+.error-text:empty { display: none; }
+.derived { margin: var(--s-4) 0; font: 400 var(--t-small)/1.4 var(--font-text); }
+.tool-row .field { min-width: min(100%, 220px); }
+
+.map-wrap { position: relative; min-height: 0; background: var(--p-surface); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
+.map-wrap.is-placing { cursor: crosshair; }
+.map-wrap svg { display: block; width: 100%; height: 100%; }
+.map-wrap svg text { pointer-events: none; }
+#basin .river-bed { fill: none; stroke: var(--p-surface); stroke-width: 18; }
+#basin .river-line,
+#basin .tick,
+#basin .north-mark,
+#basin .contour,
+#basin .link-line,
+#basin .sea-line { fill: none; stroke: var(--p-ink); stroke-width: 1.5; }
+#basin .link-line { stroke-dasharray: 4 4; }
+#basin .contour,
+#basin .sea-line { stroke: var(--p-muted); }
+#basin .map-label { fill: var(--p-ink); font-size: 15px; font-family: var(--font-text); }
+#basin .map-meta { fill: var(--p-muted); font-size: 12px; font-family: var(--font-text); }
+#basin .station-mark { stroke: var(--p-bg); stroke-width: 2; }
+#basin .station-mark.lv-none { fill: var(--lv-none); }
+#basin .station-mark.lv-blue { fill: var(--lv-blue); }
+#basin .station-mark.lv-yellow { fill: var(--lv-yellow); }
+#basin .station-mark.lv-orange { fill: var(--lv-orange); }
+#basin .station-mark.lv-red { fill: var(--lv-red); }
+#basin .station-mark.is-off { fill: var(--p-bg); stroke: var(--p-ink); }
+#basin .station-mark.is-selected { stroke: var(--p-ink); stroke-width: 3; }
+#basin .reticle { fill: none; stroke: var(--lv-orange); stroke-width: 1.5; stroke-dasharray: 144; stroke-dashoffset: 144; }
+#basin .reticle.on { animation: reticle-draw 700ms var(--ease, ease) forwards; }
+@keyframes reticle-draw { to { stroke-dashoffset: 0; } }
+.map-hits { position: absolute; inset: 0; }
+.map-hits button {
+  position: absolute; width: 44px; height: 44px; padding: 0; border: 0; background: transparent;
+  transform: translate(-50%, -50%);
+}
+.map-wrap.is-placing .map-hits { pointer-events: none; }
+.legend { display: flex; flex-wrap: wrap; gap: var(--s-3); margin: 0; color: var(--muted); font-size: var(--t-small); }
+.legend span { display: inline-flex; align-items: center; gap: var(--s-2); }
+.lamp { width: 12px; height: 12px; display: inline-block; border: 1px solid var(--p-ink); background: var(--lv-none); border-radius: 2px; }
+.lamp.lv-blue { background: var(--lv-blue); border-color: var(--lv-blue); }
+.lamp.lv-yellow { background: var(--lv-yellow); border-color: var(--lv-yellow); }
+.lamp.lv-orange { background: var(--lv-orange); border-color: var(--lv-orange); }
+.lamp.lv-red { background: var(--lv-red); border-color: var(--lv-red); }
+
+@media (max-width: 819px) {
+  #entry .fields, #rulebook .fields, .creator .fields, #rulebook .rule-groups { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 639px) {
+  #entry .fields, .creator .fields, #rulebook .rule-groups { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #basin .reticle.on { animation: none; stroke-dashoffset: 0; }
+}
